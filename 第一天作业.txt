@@ -1,0 +1,22 @@
+第一天作业
+
+选择题
+1. C
+2. D
+
+简答题
+1. patchVnode 函数的执行过程：
+（1）触发 prepatch 钩子函数；
+（2）触发 update 钩子函数；
+（3）判断：
+1）新节点有 text属性，且不等于旧结点的 text属性，
+如果老节点有 children ，移除老节点 children 对应的 DOM 元素，
+设置新节点对应 DOM 元素的 textContent。
+2）新老节点都有 children，且不相等，调用 updateChildren()，
+对比子节点，并且更新子节点的差异。
+3）只有新节点有 children 属性，如果老节点有 text属性，清空对应DOM 元素的 textContent，
+添加所有的子节点。
+4）只有老节点有 children 属性，移除所有老节点。
+5）只有老节点有 text属性，清空对应 DOM 元素的 textContent 。
+（4）触发 postpatch 钩子函数。
+
